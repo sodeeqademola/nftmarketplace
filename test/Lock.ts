@@ -103,7 +103,7 @@ describe("Lock", function () {
       let items = await NFTMarkeplace.fetchMarketItem();
 
       const itemer = await Promise.all(
-        items.map(async (i: any) => {
+        items.map(async (i) => {
           await NFTMarkeplace.tokenURI(i.tokenId);
           let item = {
             tokenId: i.tokenId,

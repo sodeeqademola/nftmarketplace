@@ -63,7 +63,7 @@ const CreateNftForm = () => {
 
       // file upload to pinata
 
-      let { description, price, title } = data;
+      const { description, price, title } = data;
 
       const fileReq = await fetch(
         "https://api.pinata.cloud/pinning/pinJSONToIPFS",
@@ -133,9 +133,11 @@ const CreateNftForm = () => {
           <Input
             type="file"
             onBlur={onBlur}
-            onChange={(e: any) => {
-              onChange(e.target.files[0]);
-              setImage(URL.createObjectURL(e.target.files[0]));
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+              onChange(e.target.files?.[0]);
+              setImage(
+                URL.createObjectURL(e.target.files?.[0] as Blob | MediaSource)
+              );
             }}
             errorMessage={errors.image?.message}
             isInvalid={!!errors.image}
