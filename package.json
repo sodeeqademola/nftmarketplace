@@ -9,18 +9,39 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "react": "19.0.0-rc-66855b96-20241106",
-    "react-dom": "19.0.0-rc-66855b96-20241106",
-    "next": "15.0.3"
+    "@hookform/resolvers": "^3.9.1",
+    "@metamask/providers": "^18.1.1",
+    "@nextui-org/react": "^2.4.8",
+    "@openzeppelin/contracts": "^5.1.0",
+    "@privy-io/react-auth": "^1.94.2",
+    "@radix-ui/react-slot": "^1.1.0",
+    "@web-std/file": "^3.0.3",
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.1.1",
+    "embla-carousel-react": "^8.3.1",
+    "ethers": "^6.13.4",
+    "framer-motion": "^11.11.11",
+    "lucide-react": "^0.456.0",
+    "next": "15.0.3",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "react-hook-form": "^7.53.2",
+    "react-hot-toast": "^2.4.1",
+    "react-loader-spinner": "^6.1.6",
+    "tailwind-merge": "^2.5.4",
+    "tailwindcss-animate": "^1.0.7",
+    "zod": "^3.23.8"
   },
   "devDependencies": {
-    "typescript": "^5",
+    "@nomicfoundation/hardhat-toolbox": "^5.0.0",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "eslint": "^8",
+    "eslint-config-next": "15.0.3",
+    "hardhat": "^2.22.15",
     "postcss": "^8",
     "tailwindcss": "^3.4.1",
-    "eslint": "^8",
-    "eslint-config-next": "15.0.3"
+    "typescript": "^5"
   }
 }
