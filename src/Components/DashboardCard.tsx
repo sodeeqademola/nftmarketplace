@@ -1,6 +1,7 @@
 "use client";
 import { fetchItemListed } from "@/Utils/Querries";
-import { Button } from "@nextui-org/react";
+import { Card, CardBody, CardHeader } from "@nextui-org/react";
+import Image from "next/image";
 import React, { useEffect, useState } from "react";
 
 type itemProps = {
@@ -55,26 +56,46 @@ const DashboardCard = () => {
             {itemCreated &&
               itemCreated.map((item: itemProps, i: number) => {
                 return (
-                  <div className="block" key={i}>
-                    <img
-                      alt=""
-                      src={item.image}
-                      className="h-56 w-full rounded-bl-3xl rounded-tr-3xl object-cover sm:h-40 lg:h-52"
-                    />
+                  // <div className="block" key={i}>
+                  //   <img
+                  //     alt=""
+                  //     src={item.image}
+                  //     className="h-56 w-full rounded-bl-3xl rounded-tr-3xl object-cover sm:h-40 lg:h-52"
+                  //   />
 
-                    <div className="mt-4 sm:flex sm:items-center sm:justify-center sm:gap-4">
-                      <strong className="font-medium">{item.title}</strong>
+                  //   <div className="mt-4 sm:flex sm:items-center sm:justify-center sm:gap-4">
+                  //     <strong className="font-medium">{item.title}</strong>
 
-                      <span className="hidden sm:block sm:h-px sm:w-8 sm:bg-yellow-500"></span>
+                  //     <span className="hidden sm:block sm:h-px sm:w-8 sm:bg-yellow-500"></span>
 
-                      <p className="mt-0.5 opacity-50 sm:mt-0">
-                        {item.description}
+                  //     <p className="mt-0.5 opacity-50 sm:mt-0">
+                  //       {item.description}
+                  //     </p>
+                  //   </div>
+                  //   <Button className="w-full font-bold">
+                  //     {item.price}ETH
+                  //   </Button>
+                  // </div>
+                  <Card className="py-4" key={i}>
+                    <CardHeader className="pb-0 pt-2 px-4 flex-col items-start">
+                      <p className="text-tiny uppercase font-bold">
+                        {item.price} ETH
                       </p>
-                    </div>
-                    <Button className="w-full font-bold">
-                      {item.price}ETH
-                    </Button>
-                  </div>
+                      <small className="text-default-500">
+                        {item.description}
+                      </small>
+                      <h4 className="font-bold text-large">{item.title}</h4>
+                    </CardHeader>
+                    <CardBody className="overflow-visible py-2">
+                      <Image
+                        alt="Card background"
+                        className="object-cover rounded-xl"
+                        src={item.image}
+                        width={270}
+                        height={150}
+                      />
+                    </CardBody>
+                  </Card>
                 );
               })}{" "}
           </div>
@@ -87,27 +108,47 @@ const DashboardCard = () => {
             You do not have any item sold out already
           </div>
         ) : (
-          <div className="flex justify-center items-center gap-4 flex-wrap">
+          <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-4 items-center mt-4">
             {itemsSold.map((item: itemProps, i: number) => {
               return (
-                <div className="block" key={i}>
-                  <img
-                    alt=""
-                    src={item.image}
-                    className="h-56 w-full rounded-bl-3xl rounded-tr-3xl object-cover sm:h-40 lg:h-52"
-                  />
+                // <div className="block" key={i}>
+                //   <img
+                //     alt=""
+                //     src={item.image}
+                //     className="h-56 w-full rounded-bl-3xl rounded-tr-3xl object-cover sm:h-40 lg:h-52"
+                //   />
 
-                  <div className="mt-4 sm:flex sm:items-center sm:justify-center sm:gap-4">
-                    <strong className="font-medium">{item.title}</strong>
+                //   <div className="mt-4 sm:flex sm:items-center sm:justify-center sm:gap-4">
+                //     <strong className="font-medium">{item.title}</strong>
 
-                    <span className="hidden sm:block sm:h-px sm:w-8 sm:bg-yellow-500"></span>
+                //     <span className="hidden sm:block sm:h-px sm:w-8 sm:bg-yellow-500"></span>
 
-                    <p className="mt-0.5 opacity-50 sm:mt-0">
-                      {item.description}
+                //     <p className="mt-0.5 opacity-50 sm:mt-0">
+                //       {item.description}
+                //     </p>
+                //   </div>
+                //   <Button className="w-full font-bold">{item.price} ETH</Button>
+                // </div>
+                <Card className="py-4" key={i}>
+                  <CardHeader className="pb-0 pt-2 px-4 flex-col items-start">
+                    <p className="stext-tiny uppercase font-bold">
+                      {item.price} ETH
                     </p>
-                  </div>
-                  <Button className="w-full font-bold">{item.price} ETH</Button>
-                </div>
+                    <small className="text-default-500">
+                      {item.description}
+                    </small>
+                    <h4 className="font-bold text-large">{item.title}</h4>
+                  </CardHeader>
+                  <CardBody className="overflow-visible py-2">
+                    <Image
+                      alt="Card background"
+                      className="object-cover rounded-xl"
+                      src={item.image}
+                      width={270}
+                      height={150}
+                    />
+                  </CardBody>
+                </Card>
               );
             })}
           </div>

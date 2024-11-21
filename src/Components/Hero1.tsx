@@ -4,7 +4,7 @@ import React from "react";
 
 const Hero1 = () => {
   return (
-    <div className="flex justify-between items-center space-x-4">
+    <div className="flex justify-between items-center space-x-4 my-3">
       <div className="w-50%">
         <p className="sm:text-[30px] md:text-[50px]  text-gray-500 font-bold">
           Discover, collect, and sell NFTs{" "}
@@ -35,7 +35,7 @@ const Hero1 = () => {
           alt="nft"
           width={450}
           height={400}
-          className=""
+          className="w-[100%]"
         />
       </div>
     </div>

@@ -131,6 +131,7 @@ const CreateNftForm = () => {
         control={control}
         render={({ field: { onChange, onBlur } }) => (
           <Input
+            className="w-full"
             type="file"
             onBlur={onBlur}
             onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
