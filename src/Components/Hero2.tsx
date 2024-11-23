@@ -45,7 +45,8 @@ const Hero2 = () => {
   };
   return (
     <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-4 items-center mt-4">
-      {nftItems &&
+      {nftItems?.length !== 0 ? (
+        nftItems &&
         nftItems.map((item: itemProps, i: number) => {
           return (
             <div key={i}>
@@ -101,7 +102,14 @@ const Hero2 = () => {
               </Card>
             </div>
           );
-        })}
+        })
+      ) : (
+        <div className="flex flex-col justify-center items-center h-screen text-3xl font-bold w-screen">
+          <h1 className=" text-center">
+            There is no nft for you now, if wallet aint connected try to do so
+          </h1>
+        </div>
+      )}
     </div>
   );
 };
