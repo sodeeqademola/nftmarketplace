@@ -84,9 +84,9 @@ const Hero2 = () => {
                 <CardBody className="overflow-visible py-2">
                   <Image
                     alt="Card background"
-                    className="object-cover rounded-xl"
+                    className="object-cover rounded-xl sm:w-full"
                     src={item.image}
-                    width={270}
+                    width={500}
                     height={150}
                   />
                 </CardBody>

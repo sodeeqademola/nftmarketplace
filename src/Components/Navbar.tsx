@@ -54,7 +54,7 @@ const Header = () => {
               className="text-gray-800 font-semibold transition hover:text-gray-950 cursor-pointer"
               href="/create-nft"
             >
-              Sell Digital Asset
+              Sell Asset
             </Link>
           </NavbarItem>
           <NavbarItem isActive>
@@ -63,7 +63,7 @@ const Header = () => {
               href="/my-digital-assets"
               aria-current="page"
             >
-              My Digital Assets
+              My Assets
             </Link>
           </NavbarItem>
           <NavbarItem>
@@ -80,7 +80,7 @@ const Header = () => {
             <Link href="#">Login</Link>
           </NavbarItem> */}
           <NavbarItem>
-            <div>
+            {/* <div>
               {authenticated ? (
                 <Button>
                   {authenticated && `${user?.wallet?.address.slice(0, 6)}...`}
@@ -88,23 +88,25 @@ const Header = () => {
               ) : (
                 <Button>00.x00 </Button>
               )}
-            </div>
+            </div> */}
           </NavbarItem>
           <NavbarItem>
             <div>
               {authenticated ? (
                 <Button
                   className="rounded-md bg-gray-600 px-5 py-2 text-sm font-medium text-white transition hover:bg-gray-700  cursor-pointer"
+                  title={`${user?.wallet?.address.slice(0, 8)}...`}
                   onClick={() => logout()}
                 >
-                  Disconnect Wallet
+                  Disconnect
                 </Button>
               ) : (
                 <Button
                   className="rounded-md bg-gray-600 px-5 py-2 text-sm font-medium text-white transition hover:bg-gray-700  cursor-pointer"
+                  title="Connect wallet"
                   onClick={() => login({ loginMethods: ["wallet"] })}
                 >
-                  Connect Wallet
+                  Connect
                 </Button>
               )}
             </div>

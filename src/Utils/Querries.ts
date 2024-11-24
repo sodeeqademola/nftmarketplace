@@ -32,7 +32,7 @@ export const CreateItem = async (url: string, price: bigint) => {
 
     toast.success("Nft created successfully");
 
-    console.log(receipt);
+    // console.log(receipt);
     return receipt;
   } catch (error) {
     console.log(error);
@@ -160,7 +160,7 @@ export const createMarketSale = async (tokenId: number, price: string) => {
   try {
     const etherPrice = ethers.parseEther(price.toString());
 
-    console.log(etherPrice, tokenId);
+    // console.log(etherPrice, tokenId);
 
     const contract = (await Connection()) as Contract;
 
@@ -171,7 +171,7 @@ export const createMarketSale = async (tokenId: number, price: string) => {
       }
     );
     const receipt = await transactionRespose.wait();
-    console.log(receipt);
+    // console.log(receipt);
     return receipt;
   } catch (error) {
     console.log(error);

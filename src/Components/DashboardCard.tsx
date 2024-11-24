@@ -25,7 +25,7 @@ const DashboardCard = () => {
     // console.log(itemCreated);
     setItemCreated(CreatedItem);
   };
-  console.log(itemCreated);
+  // console.log(itemCreated);
 
   //getsold items
   const getSoldItems = async () => {
@@ -35,7 +35,7 @@ const DashboardCard = () => {
     });
     setItemsSold(soldItems);
   };
-  console.log(itemsSold);
+  // console.log(itemsSold);
 
   useEffect(() => {
     getItemCreated();
@@ -86,13 +86,13 @@ const DashboardCard = () => {
                       </small>
                       <h4 className="font-bold text-large">{item.title}</h4>
                     </CardHeader>
-                    <CardBody className="overflow-visible py-2">
+                    <CardBody className="h-40 overflow-hidden py-2">
                       <Image
-                        alt="Card background"
+                        alt="Card backg round"
                         className="object-cover rounded-xl"
                         src={item.image}
-                        width={270}
-                        height={150}
+                        width={200}
+                        height={100}
                       />
                     </CardBody>
                   </Card>

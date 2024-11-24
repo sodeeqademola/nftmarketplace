@@ -22,20 +22,18 @@ const MyDigitalAssetCard = () => {
     setNft(myNft);
   };
 
-  console.log(nft);
-
   useEffect(() => {
     getMyNft();
   }, []);
   return (
-    <div className="flex justify-center gap-4 items-center flex-wrap mt-4">
+    <div className="">
       {nft && nft.length === 0 ? (
         <div className="grid place-content-center h-screen">
           {" "}
           You have no nft purchased personally
         </div>
       ) : (
-        <div className="flex gap-4 justify-center items-center flex-wrap">
+        <div className="flex justify-center flex-wrap items-center gap-3">
           {nft &&
             nft.map((item: itemProps, i: number) => {
               return (
@@ -70,12 +68,12 @@ const MyDigitalAssetCard = () => {
                       </small>
                       <h4 className="font-bold text-large">{item.title}</h4>
                     </CardHeader>
-                    <CardBody className="overflow-visible py-2">
+                    <CardBody className="py-2 h-40 overflow-hidden">
                       <Image
                         alt="Card background"
-                        className="object-cover rounded-xl"
+                        className=" rounded-xl overflow-hidden"
                         src={item.image}
-                        width={270}
+                        width={200}
                         height={150}
                       />
                     </CardBody>
